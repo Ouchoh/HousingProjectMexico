@@ -30,6 +30,7 @@ house_0_dict = {
 #Calculating the price per sqaure meter for house_0_dict and add it to the dictionary under the key "price_per_m2"
 
 #using JSON to store data as a list of dictionaries
+#with this json format, its pretty easy to do calculations row wise but quite a challenge to do column wise calculations
 houses_rowwise = [
     {
         "price_aprox_usd": 115910.26,
@@ -57,3 +58,14 @@ houses_rowwise = [
         "rooms": 3,
     },
 ]
+
+#reorganizing the dictionary above
+houses_columnwise = {
+    "price_aprox_usd": [115910.26, 48718.17, 28977.56, 36932.27, 83903.51],
+    "surface_covered_in_m2": [128.0, 210.0, 58.0, 79.0, 111.0],
+    "rooms": [4.0, 3.0, 2.0, 3.0, 3.0],
+}
+#storing data in dictionary of lists
+clothes = {"shirt": ["red", "M"], "sweater": ["yellow", "L"], "jacket": ["black", "L"]}
+pd.DataFrame.from_dict(clothes)
+
