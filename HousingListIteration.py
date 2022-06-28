@@ -1,5 +1,6 @@
 
 import pandas as pd
+import pickle
 #list of house price, squaremeters and room numbers
 houses_nested_list = [
     [115910.26, 128.0, 4.0],
@@ -69,3 +70,12 @@ houses_columnwise = {
 clothes = {"shirt": ["red", "M"], "sweater": ["yellow", "L"], "jacket": ["black", "L"]}
 pd.DataFrame.from_dict(clothes)
 
+#Pickle files, used in serializing and deserializing
+#serializing is the process of turning an object in memory into a stream of bytes so as you can store it on a disk
+#or send it over a network
+#This code saves the dictionary as a pickle file in the file path provided. "wb" means we are serializing the file
+pickle.dump(clothes, open("D:\python\pycharm\clothes.pkl", "wb"))
+
+#we can read the pickle file from the data storage with the code below. "rb" means we are deserializing the file
+with open("D:\python\pycharm\clothes.pkl", "rb") as f:
+    unpickled = pickle.load(f)
